@@ -1,24 +1,26 @@
 import { Link } from 'react-router-dom'
 
-export default function Header(props) {
+import styled from 'styled-components'
 
-    const navStyle = {
-        display: "flex",
-        justifyContent: "space-around",
-        border: "3px solid black",
-        padding: "8px",
-        width: "90%",
-        margin: "auto",
-      };
+const StyledNav = styled.nav`
+display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  font-size: 2em;
+`
+
+export default function Header(props) {
 
     return (
         <header>
-            <h1>My Portfolio Page</h1>
-            <nav style={navStyle}>
+            <h1>Alex Conway's Portfolio Site</h1>
+            <StyledNav>
                 <Link to='/'>HOME</Link>
                 <Link to='/about'>ABOUT</Link>
                 <Link to='/projects'>PROJECTS</Link>
-            </nav>
+            </StyledNav>
         </header>
     )
 }

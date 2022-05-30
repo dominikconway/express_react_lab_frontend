@@ -1,5 +1,17 @@
 import { useState, useEffect } from 'react'
 
+// import styled components
+import  styled  from 'styled-components'
+
+const StyledDiv = styled.div`
+border: solid white;
+color: white;
+background-color: black;
+`
+
+
+
+
 export default function About(props) {
 
     const [about, setAbout] = useState(null)
@@ -14,18 +26,14 @@ export default function About(props) {
     useEffect(() => {getAboutData()}, []);
 
    const loaded = () => (
-       <div>
+       <StyledDiv>
            <h2> {about.name} </h2>
            <h3> {about.email} </h3>
            <p> {about.bio}</p>
-       </div>
+       </StyledDiv>
    )
 
    return about ? loaded() : <h1>Loading...</h1>
 
-
-
-
-    return <h1>About</h1>
 }
 
